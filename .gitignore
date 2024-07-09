@@ -34,3 +34,6 @@ out/
 
 ### VS Code ###
 .vscode/
+.env
+default.mv.db
+default.trace.db
