@@ -10,11 +10,18 @@ fun Application.http() {
         allowMethod(HttpMethod.Get)
         allowMethod(HttpMethod.Post)
         allowMethod(HttpMethod.Delete)
+        allowHeader(HttpHeaders.AccessControlAllowOrigin)
+        allowHeader(HttpHeaders.ContentType)
         anyHost()
+        allowHeaders {
+            true
+        }
     }
     install(DefaultHeaders) {
         header("X-Engine", "Ktor") // will send this header with each response
         header("Access-Control-Allow-Origin", "*")
-        header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
+        header("Access-Control-Allow-Methods", "GET, POST, DELETE")
+        header("Access-Control-Allow-Headers", "Content-Type, Authorization")
+
     }
 }
