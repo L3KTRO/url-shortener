@@ -1,8 +1,5 @@
 package top.lestro.logic.utils
 
-import kotlinx.serialization.Serializable
-
-
 typealias B36 = String
 
 fun Int.encodeIdToB36(): B36 {
